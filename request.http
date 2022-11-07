@@ -1,0 +1,112 @@
+@baseUrl=http://localhost:3002
+@apiUrl=http://localhost:3002/api/v1
+### @name default
+GET {{baseUrl}}
+
+### @name login
+POST {{apiUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "huyson201@gmail.com",
+    "password": "asdasd"
+}
+
+### @name register
+POST {{apiUrl}}/auth/register
+Content-Type: application/json
+
+{
+    "name": "huyson",
+    "email": "huyson@gmail.com",
+    "password": "asdasd"
+}
+
+
+### @name logout
+POST {{apiUrl}}/auth/refresh-token
+Content-Type: application/json
+
+### @name logout
+POST {{apiUrl}}/auth/logout
+Content-Type: application/json
+
+
+### @name getProfile
+GET  {{apiUrl}}/auth/me
+Content-Type: application/json
+
+### @name getBookcase
+GET  {{apiUrl}}/auth/me/bookcase
+Content-Type: application/json
+
+### @name deleteBookcase
+DELETE {{apiUrl}}/auth/me/bookcase/delete?book_id=2
+Content-Type: application/json
+
+### @name addBookcase
+POST  {{apiUrl}}/auth/me/bookcase/add
+Content-Type: application/json
+
+{
+   "book_id": 6,
+   "chapter_id": 4
+}
+
+### @name addBookcase
+GET  {{apiUrl}}/auth/me/bookcase/find/1
+Content-Type: application/json
+
+
+
+
+### @name getCategories
+GET  {{apiUrl}}/categories
+Content-Type: application/json
+
+
+### @name getBooks
+GET  {{apiUrl}}/books
+Content-Type: application/json
+
+### @name getBookBySlug
+GET {{apiUrl}}/books/bat-dau-qua-manh-lam-sao-bay-gio-dich
+Content-Type: application/json
+
+### @name getBookRecommend
+GET {{apiUrl}}/books/recommends
+Content-Type: application/json'
+
+### @name getBookPopular
+GET {{apiUrl}}/books/popular?limit=20
+Content-Type: application/json'
+
+
+### @name getFulledBooks
+GET {{apiUrl}}/books/full
+Content-Type: application/json'
+
+
+### @name getSliders
+GET {{apiUrl}}/sliders/
+Content-Type: application/json
+
+### @name getChapter
+GET {{apiUrl}}/books/1/chapters
+Content-Type: application/json'
+
+### @name getSearchChapter
+GET {{apiUrl}}/books/1/chapters/search?q=a&page=1&order=asc
+Content-Type: application/json'
+
+### @name getBookBySlug
+GET {{apiUrl}}/books/slug/ta-su-phu-moi-den-dai-nan-moi-dot-pha-ban-dich/chapter/203
+Content-Type: application/json
+
+### @name getCategories
+GET  {{apiUrl}}/categories/chien-tranh/books
+Content-Type: application/json
+
+### @name searchBook
+GET {{apiUrl}}/books/search?q=Ta Sư 
+Content-Type: application/json'
